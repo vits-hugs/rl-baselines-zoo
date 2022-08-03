@@ -1,0 +1,1 @@
+cat Ant*/0.monitor.csv > all.txt
