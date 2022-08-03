@@ -218,7 +218,7 @@ HopperBulletEnv-v0:
   n_timesteps: !!float 2e6
   policy: 'MlpPolicy'
   n_steps: 2048
-  nminibatches: 128
+  nminibatches: 256
   lam: 0.95
   gamma: 0.99
   noptepochs: 10

@@ -111,7 +111,12 @@ def main():
     # For HER, monitor success rate
     successes = []
     state = None
+    #
+    robots_limit = 1000
+    robot_counter = 1
     for _ in range(args.n_timesteps):
+        if robot_counter >= robots_limit:
+            break
         action, state = model.predict(obs, state=state, deterministic=deterministic)
         # Random Agent
         # action = [env.action_space.sample()]
@@ -151,6 +156,7 @@ def main():
                     print("Success?", infos[0].get('is_success', False))
                 # Alternatively, you can add a check to wait for the end of the episode
                 # if done:
+                robot_counter +=1
                 obs = env.reset()
                 if args.algo == 'her':
                     successes.append(infos[0].get('is_success', False))

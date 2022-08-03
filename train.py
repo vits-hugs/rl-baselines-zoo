@@ -413,13 +413,13 @@ if __name__ == '__main__':
 
     print("Log path: {}".format(save_path))
 
-    try:
-        model.learn(n_timesteps, **kwargs)
-    except KeyboardInterrupt:
-        pass
-    finally:
+    #try:
+    model.learn(n_timesteps, **kwargs)
+    #xcept KeyboardInterrupt:
+    #    pass
+    #finally:
         # Release resources
-        env.close()
+    env.close()
 
     # Only save worker of rank 0 when using mpi
     if rank == 0:
